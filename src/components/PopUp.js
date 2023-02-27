@@ -45,7 +45,7 @@ function PopUp({ handleClosePopUp, currentPhoto }) {
           Total Likes-{currentPhoto.user.total_likes}
         </div>
       </div>
-      <div>Tags -</div>
+      
     </div>
   );
 }
