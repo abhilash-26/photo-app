@@ -1,7 +1,6 @@
 import React from "react";
 import { Avatar } from "@mui/material";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
-import CancelIcon from "@mui/icons-material/Cancel";
 import CloseIcon from "@mui/icons-material/Close";
 
 function PopUp({ handleClosePopUp, currentPhoto }) {
@@ -19,6 +18,7 @@ function PopUp({ handleClosePopUp, currentPhoto }) {
         <img
           style={{ maxWidth: "100%", height: "auto", maxHeight: "60vh" }}
           src={currentPhoto.urls.full}
+          alt="unsplash"
         />
         <CloseIcon
           onClick={handleClosePopUp}
@@ -45,7 +45,6 @@ function PopUp({ handleClosePopUp, currentPhoto }) {
           Total Likes-{currentPhoto.user.total_likes}
         </div>
       </div>
-      
     </div>
   );
 }
