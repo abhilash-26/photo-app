@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MediaCard from "./PhotoCard";
-import { Container } from "@mui/material";
 import { TextField } from "@mui/material";
 import Switch from "@mui/material/Switch";
-import ReactSearchBox from "react-search-box";
-
 import axios from "axios";
 import PopUp from "./PopUp";
 
@@ -20,6 +17,9 @@ function PhotoPage() {
       const data = await axios({
         method: "get",
         url: "https://api.unsplash.com/photos?client_id=4rcOUoH4m26_QJcFUD6jUIMHWHpWXGWrI6_j-qufDKs",
+        params: {
+          per_page: 20,
+        },
       });
       setPhotos(data.data);
     };
@@ -33,6 +33,7 @@ function PhotoPage() {
         url: "https://api.unsplash.com/search/photos?client_id=4rcOUoH4m26_QJcFUD6jUIMHWHpWXGWrI6_j-qufDKs",
         params: {
           query: searchValue,
+          per_page: 20,
         },
       });
       if (searchValue) {
@@ -62,6 +63,7 @@ function PhotoPage() {
     <div
       style={{
         backgroundColor: bg ? "black" : "white",
+        minHeight: "100vh",
       }}
     >
       <div
